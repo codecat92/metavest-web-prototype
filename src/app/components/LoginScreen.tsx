@@ -31,7 +31,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
         {/* Logo + Brand */}
         <div className="flex flex-col items-center mt-6 mb-10">
         <img
-        src="/src/app/assets/metavest-logo.png"
+        src="/metavest-logo.png"
         alt="Metavest"
         style={{
         width: 200,
