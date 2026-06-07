@@ -172,7 +172,12 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
         `}</style>
         <div className="px-6 flex items-center justify-between mb-3">
           <h3 className="text-white" style={{ fontSize: 18, fontWeight: 700 }}>Markets</h3>
-          <button style={{ fontSize: 13, color: "#AB4BFF", fontWeight: 600 }}>See all</button>
+          <button
+            onClick={() => onNavigate("market")}
+            style={{ fontSize: 13, color: "#AB4BFF", fontWeight: 600, background: "none", border: "none", cursor: "pointer" }}
+          >
+            See all
+          </button>
         </div>
         {/* Overflow clip with edge fade */}
         <div

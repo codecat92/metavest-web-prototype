@@ -8,11 +8,12 @@ import { FollowTradeScreen } from "./components/FollowTradeScreen";
 import { PortfolioScreen } from "./components/PortfolioScreen";
 import { ProfileScreen } from "./components/ProfileScreen";
 import { PAMMScreen } from "./components/PAMMScreen";
+import { MarketScreen } from "./components/MarketScreen";
 import { BottomNav } from "./components/BottomNav";
 
 // MARKER-MAKE-KIT-INVOKED
 
-type Screen = "login" | "home" | "signals" | "traders" | "followTrade" | "portfolio" | "profile" | "pamm";
+type Screen = "login" | "home" | "signals" | "traders" | "followTrade" | "portfolio" | "profile" | "pamm" | "market";
 const NAV_SCREENS: Screen[] = ["home", "signals", "traders", "portfolio", "profile"];
 
 export default function App() {
@@ -72,6 +73,9 @@ export default function App() {
           )}
           {screen === "pamm" && (
             <PAMMScreen onBack={goBack} />
+          )}
+          {screen === "market" && (
+            <MarketScreen onBack={goBack} />
           )}
         </div>
 
