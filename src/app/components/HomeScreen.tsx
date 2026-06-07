@@ -142,7 +142,7 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
               ? "0 0 22px rgba(247,201,72,0.15), inset 0 1px 0 rgba(255,255,255,0.06)"
               : "none",
             cursor: "pointer",
-            transition: "background 0.3s, border 0.3s, box-shadow 0.3s",
+            transition: "background 0.6s, border 0.6s, box-shadow 0.6s",
           }}
           onMouseEnter={(e) => {
             const btn = e.currentTarget;
@@ -176,7 +176,7 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
             color: isGlowing ? "#F7C948" : "#9B8EC4",
             marginTop: 4,
             fontWeight: 600,
-            transition: "color 0.3s",
+            transition: "color 0.6s",
           }}>
             {a.label}
           </span>
