@@ -277,9 +277,16 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
       <div className="px-6 mb-6">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-white" style={{ fontSize: 18, fontWeight: 700 }}>Latest News</h3>
+          <button
+            onClick={() => onNavigate("news")}
+            style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+          >
           <ChevronRight size={18} color="#9B8EC4" />
+          </button>
       </div>
-      <NewsFeed />
+      <div onClick={() => onNavigate("news")} style={{ cursor: "pointer" }}>
+        <NewsFeed />
+      </div>
 </div>
     </div>
   );
