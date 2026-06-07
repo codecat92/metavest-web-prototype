@@ -35,6 +35,14 @@ export default function App() {
       className="size-full flex items-center justify-center"
       style={{ background: "#0E0B1E", minHeight: "100vh" }}
     >
+
+    <style>{`
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    `}</style>
+
       {/* Mobile frame */}
       <div
         className="relative overflow-hidden flex flex-col"
@@ -50,7 +58,14 @@ export default function App() {
         }}
       >
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
+        <div
+          key={screen}
+          className="flex-1 overflow-y-auto"
+          style={{
+            scrollbarWidth: "none",
+            animation: "fadeIn 0.3s ease forwards",
+          }}
+        >
           {screen === "login" && (
             <LoginScreen onLogin={() => navigate("home")} />
           )}
