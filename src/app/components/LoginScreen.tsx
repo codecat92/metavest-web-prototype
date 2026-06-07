@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Eye, EyeOff, TrendingUp } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 
 interface LoginScreenProps {
   onLogin: () => void;
@@ -30,24 +30,17 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
       <div className="pt-14 px-6 flex flex-col flex-1">
         {/* Logo + Brand */}
         <div className="flex flex-col items-center mt-6 mb-10">
-          <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
-            style={{
-              background: "linear-gradient(135deg, #AB4BFF 0%, #5913B8 100%)",
-              boxShadow: "0 0 32px rgba(171,75,255,0.45)",
-            }}
-          >
-            <TrendingUp size={28} color="#fff" strokeWidth={2.5} />
-          </div>
-          <h1
-            className="text-white mb-1"
-            style={{ fontSize: 32, fontWeight: 800, letterSpacing: "-0.5px" }}
-          >
-            Metavest
-          </h1>
-          <p style={{ fontSize: 15, color: "#9B8EC4", fontWeight: 400 }}>
-            Smart Social Trading Platform
-          </p>
+        <img
+        src="/src/app/assets/metavest-logo.png"
+        alt="Metavest"
+        style={{
+        width: 200,
+        objectFit: "contain",
+  }}
+/>
+<p style={{ fontSize: 15, color: "#9B8EC4", fontWeight: 400, marginTop: 8 }}>
+  Smart Social Trading Platform
+</p>
         </div>
 
         {/* Welcome text */}
