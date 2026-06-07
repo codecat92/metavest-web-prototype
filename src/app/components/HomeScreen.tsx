@@ -36,9 +36,10 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
 
   useEffect(() => {
     [0, 1, 2, 3].forEach((index) => {
-      setTimeout(() => setGlowIndex(index), index * 500 + 300);
-      setTimeout(() => setGlowIndex(null), index * 500 + 900);
+      setTimeout(() => setGlowIndex(index), index * 900 + 400);
     });
+    // Only reset to null after the last card finishes
+    setTimeout(() => setGlowIndex(null), 3 * 900 + 1300);
   }, []);
 
   return (
