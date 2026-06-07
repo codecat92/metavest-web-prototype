@@ -1,6 +1,8 @@
 import React from "react";
 import { Bell, Zap, TrendingUp, TrendingDown, ChevronRight, ArrowUpRight, Users, BarChart2, Building2 } from "lucide-react";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
+import { NewsFeed } from "./NewsFeed";
+
 
 const sparkData = [
   { v: 40 }, { v: 55 }, { v: 48 }, { v: 70 }, { v: 65 }, { v: 80 }, { v: 75 }, { v: 90 },
@@ -272,41 +274,13 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
       </div>
 
       {/* News Feed */}
-      <div className="px-6">
+      <div className="px-6 mb-6">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-white" style={{ fontSize: 18, fontWeight: 700 }}>Latest News</h3>
           <ChevronRight size={18} color="#9B8EC4" />
-        </div>
-        <div className="flex flex-col gap-3">
-          {news.map((n, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 p-4"
-              style={{
-                borderRadius: 18,
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(171,75,255,0.12)",
-              }}
-            >
-              <div
-                className="flex-shrink-0 py-1 h-fit"
-                style={{
-                borderRadius: 8,
-                background: "rgba(171,75,255,0.15)",
-                width: 72,                // fixed width — same for all tags
-                textAlign: "center",
-                }}
-                >
-  <span style={{ fontSize: 11, color: "#AB4BFF", fontWeight: 700 }}>{n.tag}</span>
-</div>
-              <div className="flex-1">
-                <p className="text-white" style={{ fontSize: 13, fontWeight: 600, lineHeight: 1.4 }}>{n.title}</p>
-                <p style={{ fontSize: 11, color: "#9B8EC4", marginTop: 4 }}>{n.time}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
+      <NewsFeed />
+</div>
     </div>
   );
 }

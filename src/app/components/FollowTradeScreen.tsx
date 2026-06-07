@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { ArrowLeft, Shield, TrendingUp, CheckCircle, Info } from "lucide-react";
 
