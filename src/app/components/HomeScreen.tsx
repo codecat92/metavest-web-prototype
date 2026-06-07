@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { Bell, Zap, TrendingUp, TrendingDown, ChevronRight, ArrowUpRight, Users, BarChart2, Building2 } from "lucide-react";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
 import { NewsFeed } from "./NewsFeed";
@@ -30,7 +31,16 @@ const news = [
   { title: "EUR/USD breaks key resistance at 1.0850 — bulls target 1.0920 next", time: "6h ago", tag: "EUR/USD" },
 ];
 
-export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => void }) {
+export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => void }){
+  const [glowIndex, setGlowIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    [0, 1, 2, 3].forEach((index) => {
+      setTimeout(() => setGlowIndex(index), index * 500 + 300);
+      setTimeout(() => setGlowIndex(null), index * 500 + 900);
+    });
+  }, []);
+
   return (
     <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}>
       {/* Glow */}
@@ -107,56 +117,74 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
 
       {/* Quick Actions */}
       <div className="px-6 mb-6">
-        <div className="flex gap-3">
-          {[
-            { label: "Signals", icon: "⚡", screen: "signals" },
-            { label: "Traders", icon: "👥", screen: "traders" },
-            { label: "Portfolio", icon: "📊", screen: "portfolio" },
-            { label: "PAMM", icon: "🏦", screen: "pamm" },
-          ].map((a) => (
-            <button
-              key={a.label}
-              onClick={() => onNavigate(a.screen)}
-              className="flex-1 flex flex-col items-center py-3"
-              style={{
-                borderRadius: 18,
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(171,75,255,0.15)",
-                cursor: "pointer",
-                transition: "background 0.25s, border 0.25s, box-shadow 0.25s",
-              }}
-              onMouseEnter={(e) => {
-                const btn = e.currentTarget;
-                btn.style.background = "radial-gradient(ellipse at 50% -10%, rgba(247,201,72,0.18) 0%, rgba(255,255,255,0.05) 75%)";
-                btn.style.border = "1px solid rgba(247,201,72,0.35)";
-                btn.style.boxShadow = "0 0 22px rgba(247,201,72,0.15), inset 0 1px 0 rgba(255,255,255,0.06)";
-                const svg = btn.querySelector("svg");
-                if (svg) (svg as SVGElement).style.filter = "brightness(0) saturate(100%) invert(88%) sepia(55%) saturate(600%) hue-rotate(5deg) brightness(1.05)";
-                const label = btn.querySelector("span");
-                if (label) (label as HTMLElement).style.color = "#F7C948";
-              }}
-              onMouseLeave={(e) => {
-                const btn = e.currentTarget;
-                btn.style.background = "rgba(255,255,255,0.05)";
-                btn.style.border = "1px solid rgba(171,75,255,0.15)";
-                btn.style.boxShadow = "none";
-                const svg = btn.querySelector("svg");
-                if (svg) (svg as SVGElement).style.filter = "none";
-                const label = btn.querySelector("span");
-                if (label) (label as HTMLElement).style.color = "#9B8EC4";
-              }}
-            >
-              {{
-                signals: <Zap size={20} color="#AB4BFF" strokeWidth={1.8} />,
-                traders: <Users size={20} color="#AB4BFF" strokeWidth={1.8} />,
-                portfolio: <BarChart2 size={20} color="#AB4BFF" strokeWidth={1.8} />,
-                pamm: <Building2 size={20} color="#AB4BFF" strokeWidth={1.8} />,
-              }[a.screen]}
-              <span style={{ fontSize: 11, color: "#9B8EC4", marginTop: 4, fontWeight: 600, transition: "color 0.25s" }}>{a.label}</span>
-            </button>
-          ))}
-        </div>
-      </div>
+  <div className="flex gap-3">
+    {[
+      { label: "Signals",   screen: "signals"   },
+      { label: "Traders",   screen: "traders"   },
+      { label: "Portfolio", screen: "portfolio" },
+      { label: "PAMM",      screen: "pamm"      },
+    ].map((a, index) => {
+      const isGlowing = glowIndex === index;
+      return (
+        <button
+          key={a.label}
+          onClick={() => onNavigate(a.screen)}
+          className="flex-1 flex flex-col items-center py-3"
+          style={{
+            borderRadius: 18,
+            background: isGlowing
+              ? "radial-gradient(ellipse at 50% -10%, rgba(247,201,72,0.18) 0%, rgba(255,255,255,0.05) 75%)"
+              : "rgba(255,255,255,0.05)",
+            border: isGlowing
+              ? "1px solid rgba(247,201,72,0.35)"
+              : "1px solid rgba(171,75,255,0.15)",
+            boxShadow: isGlowing
+              ? "0 0 22px rgba(247,201,72,0.15), inset 0 1px 0 rgba(255,255,255,0.06)"
+              : "none",
+            cursor: "pointer",
+            transition: "background 0.3s, border 0.3s, box-shadow 0.3s",
+          }}
+          onMouseEnter={(e) => {
+            const btn = e.currentTarget;
+            btn.style.background = "radial-gradient(ellipse at 50% -10%, rgba(247,201,72,0.18) 0%, rgba(255,255,255,0.05) 75%)";
+            btn.style.border = "1px solid rgba(247,201,72,0.35)";
+            btn.style.boxShadow = "0 0 22px rgba(247,201,72,0.15), inset 0 1px 0 rgba(255,255,255,0.06)";
+            const svg = btn.querySelector("svg");
+            if (svg) (svg as SVGElement).style.filter = "brightness(0) saturate(100%) invert(88%) sepia(55%) saturate(600%) hue-rotate(5deg) brightness(1.05)";
+            const label = btn.querySelector("span");
+            if (label) (label as HTMLElement).style.color = "#F7C948";
+          }}
+          onMouseLeave={(e) => {
+            const btn = e.currentTarget;
+            btn.style.background = "rgba(255,255,255,0.05)";
+            btn.style.border = "1px solid rgba(171,75,255,0.15)";
+            btn.style.boxShadow = "none";
+            const svg = btn.querySelector("svg");
+            if (svg) (svg as SVGElement).style.filter = "none";
+            const label = btn.querySelector("span");
+            if (label) (label as HTMLElement).style.color = "#9B8EC4";
+          }}
+        >
+          {{
+            signals:   <Zap       size={20} color={isGlowing ? "#F7C948" : "#AB4BFF"} strokeWidth={1.8} />,
+            traders:   <Users     size={20} color={isGlowing ? "#F7C948" : "#AB4BFF"} strokeWidth={1.8} />,
+            portfolio: <BarChart2 size={20} color={isGlowing ? "#F7C948" : "#AB4BFF"} strokeWidth={1.8} />,
+            pamm:      <Building2 size={20} color={isGlowing ? "#F7C948" : "#AB4BFF"} strokeWidth={1.8} />,
+          }[a.screen]}
+          <span style={{
+            fontSize: 11,
+            color: isGlowing ? "#F7C948" : "#9B8EC4",
+            marginTop: 4,
+            fontWeight: 600,
+            transition: "color 0.3s",
+          }}>
+            {a.label}
+          </span>
+        </button>
+      );
+    })}
+  </div>
+</div>
 
       {/* Market Overview — infinite carousel */}
       <div className="mb-6">
