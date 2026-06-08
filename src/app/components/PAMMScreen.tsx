@@ -13,7 +13,7 @@ export function PAMMScreen({ onBack }: PAMMScreenProps) {
   return (
     <div
       className="flex flex-col min-h-full pb-10"
-      style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}
+      style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}
     >
       {/* Glow */}
       <div
@@ -88,7 +88,7 @@ export function PAMMScreen({ onBack }: PAMMScreenProps) {
           className="p-5"
           style={{
             borderRadius: 20,
-            background: "rgba(30,18,60,0.85)",
+            background: "rgba(14,20,57,0.85)",
             border: "1px solid rgba(171,75,255,0.15)",
           }}
         >
@@ -174,7 +174,7 @@ export function PAMMScreen({ onBack }: PAMMScreenProps) {
           className="p-5 flex flex-col gap-3"
           style={{
             borderRadius: 20,
-            background: "rgba(30,18,60,0.85)",
+            background: "rgba(14,20,57,0.85)",
             border: "1px solid rgba(171,75,255,0.15)",
           }}
         >

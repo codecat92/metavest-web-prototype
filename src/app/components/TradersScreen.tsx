@@ -68,7 +68,7 @@ export function TradersScreen({ onNavigate }: { onNavigate: (screen: string) => 
   };
 
   return (
-    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}>
+    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}>
       {/* Header */}
       <div className="px-6 pt-14 pb-4">
         <h2 className="text-white mb-1" style={{ fontSize: 24, fontWeight: 800 }}>Traders</h2>
@@ -143,7 +143,7 @@ export function TradersScreen({ onNavigate }: { onNavigate: (screen: string) => 
               key={trader.id}
               style={{
                 borderRadius: 24,
-                background: "rgba(30,18,60,0.85)",
+                background: "rgba(14,20,57,0.85)",
                 border: "1px solid rgba(171,75,255,0.15)",
                 padding: "18px 18px 14px",
               }}

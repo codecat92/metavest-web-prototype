@@ -51,7 +51,7 @@ export default function App() {
           maxWidth: 393,
           height: "100vh",
           maxHeight: 852,
-          background: "#20143D",
+          background: "#0E1439",
           position: "relative",
           overflowY: "auto",
           scrollbarWidth: "none",

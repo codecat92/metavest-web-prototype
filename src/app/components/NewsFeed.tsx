@@ -48,13 +48,13 @@ export function NewsFeed() {
         {/* Top fade */}
         <div style={{
           position: "absolute", top: 0, left: 0, right: 0, height: 48, zIndex: 2,
-          background: "linear-gradient(to bottom, #20143D, transparent)",
+          background: "linear-gradient(to bottom, #0E1439, transparent)",
           pointerEvents: "none",
         }} />
         {/* Bottom fade */}
         <div style={{
           position: "absolute", bottom: 0, left: 0, right: 0, height: 48, zIndex: 2,
-          background: "linear-gradient(to top, #20143D, transparent)",
+          background: "linear-gradient(to top, #0E1439, transparent)",
           pointerEvents: "none",
         }} />
 
@@ -71,7 +71,7 @@ export function NewsFeed() {
                   gap: 12,
                   padding: "12px 14px",
                   borderRadius: 16,
-                  background: "rgba(30,18,60,0.85)",
+                  background: "rgba(14,20,57,0.85)",
                   border: "1px solid rgba(171,75,255,0.12)",
                   flexShrink: 0,
                 }}

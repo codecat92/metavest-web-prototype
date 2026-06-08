@@ -14,7 +14,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
   return (
     <div
       className="flex flex-col min-h-full relative overflow-hidden"
-      style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}
+      style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}
     >
       {/* Background glow orbs */}
       <div

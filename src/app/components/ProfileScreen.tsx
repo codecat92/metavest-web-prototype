@@ -46,7 +46,7 @@ export function ProfileScreen({ onLogout }: { onLogout: () => void }) {
   const [activeTab, setActiveTab] = useState<"overview" | "badges">("overview");
 
   return (
-    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}>
+    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}>
       {/* Glow */}
       <div
         className="absolute top-0 left-0 w-full h-80 pointer-events-none"
@@ -152,7 +152,7 @@ export function ProfileScreen({ onLogout }: { onLogout: () => void }) {
           className="p-5"
           style={{
             borderRadius: 24,
-            background: "rgba(30,18,60,0.85)",
+            background: "rgba(14,20,57,0.85)",
             border: "1px solid rgba(171,75,255,0.15)",
           }}
         >
@@ -217,7 +217,7 @@ export function ProfileScreen({ onLogout }: { onLogout: () => void }) {
               style={{
                 borderRadius: 18,
                 background: badge.unlocked
-                  ? `radial-gradient(ellipse at 50% 0%, ${{ "Hot Streak": "rgba(247,201,72,0.13)", "Diamond Hands": "rgba(47,239,196,0.1)" }[badge.label] ?? "rgba(171,75,255,0.12)"} 0%, rgba(30,18,60,0.95) 75%)`
+                  ? `radial-gradient(ellipse at 50% 0%, ${{ "Hot Streak": "rgba(247,201,72,0.13)", "Diamond Hands": "rgba(47,239,196,0.1)" }[badge.label] ?? "rgba(171,75,255,0.12)"} 0%, rgba(14,20,57,0.95) 75%)`
                   : "rgba(255,255,255,0.03)",
                 border: badge.unlocked
                   ? `1px solid ${{ "Hot Streak": "rgba(247,201,72,0.3)", "Diamond Hands": "rgba(47,239,196,0.25)" }[badge.label] ?? "rgba(171,75,255,0.35)"}`
@@ -281,7 +281,7 @@ export function ProfileScreen({ onLogout }: { onLogout: () => void }) {
             <div
               style={{
                 borderRadius: 20,
-                background: "rgba(30,18,60,0.85)",
+                background: "rgba(14,20,57,0.85)",
                 border: "1px solid rgba(171,75,255,0.12)",
                 overflow: "hidden",
               }}

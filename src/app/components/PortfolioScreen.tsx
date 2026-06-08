@@ -41,7 +41,7 @@ export function PortfolioScreen() {
   const totalChangePct = "+74.5%";
 
   return (
-    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}>
+    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}>
       {/* Glow */}
       <div
         className="absolute top-0 right-0 w-[300px] h-[300px] pointer-events-none"
@@ -110,7 +110,7 @@ export function PortfolioScreen() {
             <Tooltip
               key="tooltip"
               contentStyle={{
-                background: "rgba(30,18,60,0.95)",
+                background: "rgba(14,20,57,0.95)",
                 border: "1px solid rgba(171,75,255,0.3)",
                 borderRadius: 12,
                 color: "#F0EEFF",
@@ -157,7 +157,7 @@ export function PortfolioScreen() {
               className="flex items-center gap-3 p-4"
               style={{
                 borderRadius: 18,
-                background: "rgba(30,18,60,0.85)",
+                background: "rgba(14,20,57,0.85)",
                 border: "1px solid rgba(171,75,255,0.12)",
               }}
             >
@@ -211,7 +211,7 @@ export function PortfolioScreen() {
               className="flex items-center gap-3 p-4"
               style={{
                 borderRadius: 18,
-                background: "rgba(30,18,60,0.85)",
+                background: "rgba(14,20,57,0.85)",
                 border: "1px solid rgba(171,75,255,0.12)",
               }}
             >
@@ -245,7 +245,7 @@ export function PortfolioScreen() {
           className="p-5"
           style={{
             borderRadius: 24,
-            background: "rgba(30,18,60,0.85)",
+            background: "rgba(14,20,57,0.85)",
             border: "1px solid rgba(171,75,255,0.15)",
           }}
         >

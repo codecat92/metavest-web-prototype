@@ -43,7 +43,7 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
   }, []);
 
   return (
-    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}>
+    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}>
       {/* Glow */}
       <div
         className="absolute top-0 right-0 w-[260px] h-[260px] pointer-events-none"
@@ -219,9 +219,9 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
           }}
         >
           {/* Left fade */}
-          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 32, zIndex: 2, background: "linear-gradient(to right, #20143D, transparent)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 32, zIndex: 2, background: "linear-gradient(to right, #0E1439, transparent)", pointerEvents: "none" }} />
           {/* Right fade */}
-          <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 32, zIndex: 2, background: "linear-gradient(to left, #20143D, transparent)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 32, zIndex: 2, background: "linear-gradient(to left, #0E1439, transparent)", pointerEvents: "none" }} />
 
           {/* Scrolling track — doubled for seamless loop */}
           <div className="marquee-track" style={{ display: "flex", gap: 12, width: "max-content", paddingLeft: 24 }}>

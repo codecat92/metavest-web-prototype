@@ -50,7 +50,7 @@ This repository contains the **web prototype** — a fully interactive UI built 
 
 | Token | Value | Usage |
 |---|---|---|
-| Background | `#20143D` | Deep purple-navy base |
+| Background | `#0E1439` | Deep purple-navy base |
 | Accent Gold | `#C9A84C` | Primary accent — used sparingly |
 | Purple | `#AB4BFF` | Interactive elements, active states |
 | Silver | `#8899AA` | Secondary text, inactive icons |

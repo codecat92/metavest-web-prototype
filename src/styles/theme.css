@@ -2,7 +2,7 @@
 
 :root {
   --font-size: 16px;
-  --background: #20143D;
+  --background: #0E1439;
   --foreground: #F0EEFF;
   --card: rgba(30, 18, 60, 0.85);
   --card-foreground: #F0EEFF;
@@ -42,7 +42,7 @@
 }
 
 .dark {
-  --background: #20143D;
+  --background: #0E1439;
   --foreground: #F0EEFF;
   --card: rgba(30, 18, 60, 0.85);
   --card-foreground: #F0EEFF;

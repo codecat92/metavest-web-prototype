@@ -86,7 +86,7 @@ export function SignalScreen({ onNavigate }: { onNavigate: (screen: string) => v
   });
 
   return (
-    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}>
+    <div className="flex flex-col min-h-full pb-28" style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}>
       {/* Header */}
       <div className="px-6 pt-14 pb-4">
         <div className="flex items-center justify-between mb-5">
@@ -149,7 +149,7 @@ export function SignalScreen({ onNavigate }: { onNavigate: (screen: string) => v
               key={signal.id}
               style={{
                 borderRadius: 24,
-                background: "rgba(30,18,60,0.85)",
+                background: "rgba(14,20,57,0.85)",
                 border: expanded
                   ? "1px solid rgba(171,75,255,0.5)"
                   : "1px solid rgba(171,75,255,0.15)",

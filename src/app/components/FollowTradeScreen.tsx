@@ -24,7 +24,7 @@ export function FollowTradeScreen({ onBack }: FollowTradeScreenProps) {
     return (
       <div
         className="flex flex-col min-h-full items-center justify-center px-6"
-        style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}
+        style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}
       >
         <div
           className="absolute top-0 left-0 w-full h-full pointer-events-none"
@@ -91,7 +91,7 @@ export function FollowTradeScreen({ onBack }: FollowTradeScreenProps) {
   }
 
   return (
-    <div className="flex flex-col min-h-full pb-10" style={{ fontFamily: "'Manrope', sans-serif", background: "#20143D" }}>
+    <div className="flex flex-col min-h-full pb-10" style={{ fontFamily: "'Manrope', sans-serif", background: "#0E1439" }}>
       {/* Glow */}
       <div
         className="absolute top-0 left-0 w-full h-64 pointer-events-none"
@@ -150,7 +150,7 @@ export function FollowTradeScreen({ onBack }: FollowTradeScreenProps) {
           className="p-5"
           style={{
             borderRadius: 24,
-            background: "rgba(30,18,60,0.85)",
+            background: "rgba(14,20,57,0.85)",
             border: "1px solid rgba(171,75,255,0.15)",
           }}
         >
@@ -217,7 +217,7 @@ export function FollowTradeScreen({ onBack }: FollowTradeScreenProps) {
                 className="flex items-center gap-4 p-4"
                 style={{
                   borderRadius: 18,
-                  background: active ? `${s.color}12` : "rgba(30,18,60,0.85)",
+                  background: active ? `${s.color}12` : "rgba(14,20,57,0.85)",
                   border: `1px solid ${active ? `${s.color}44` : "rgba(171,75,255,0.12)"}`,
                   cursor: "pointer",
                   textAlign: "left",
@@ -253,7 +253,7 @@ export function FollowTradeScreen({ onBack }: FollowTradeScreenProps) {
           className="p-5"
           style={{
             borderRadius: 24,
-            background: "rgba(30,18,60,0.85)",
+            background: "rgba(14,20,57,0.85)",
             border: "1px solid rgba(171,75,255,0.15)",
           }}
         >
