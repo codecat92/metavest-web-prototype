@@ -20,9 +20,9 @@ const markets = [
 ];
 
 const traders = [
-  { name: "AlphaWave", handle: "@alphawave", roi: "+142%", winRate: "78%", avatar: "AW" },
-  { name: "TradeMind", handle: "@trademind", roi: "+89%", winRate: "71%", avatar: "TM" },
-  { name: "FX Sentinel", handle: "@fxsentinel", roi: "+231%", winRate: "83%", avatar: "FS" },
+  { name: "AlphaWave", handle: "@alphawave", roi: "+142%", winRate: "78%", avatar: "AW", avatar_url: "https://picsum.photos/seed/alphawave/100/100" },
+  { name: "TradeMind", handle: "@trademind", roi: "+89%",  winRate: "71%", avatar: "TM", avatar_url: "https://picsum.photos/seed/trademind/100/100" },
+  { name: "FX Sentinel", handle: "@fxsentinel", roi: "+231%", winRate: "83%", avatar: "FS", avatar_url: "https://picsum.photos/seed/fxsentinel/100/100" },
 ];
 
 const news = [
@@ -283,12 +283,18 @@ export function HomeScreen({ onNavigate }: { onNavigate: (screen: string) => voi
                 cursor: "pointer",
               }}
             >
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center mb-2"
-                style={{ background: "linear-gradient(135deg, #AB4BFF 0%, #5913B8 100%)" }}
-              >
-                <span className="text-white" style={{ fontSize: 13, fontWeight: 800 }}>{t.avatar}</span>
-              </div>
+              <img
+                src={t.avatar_url}
+                alt={t.name}
+                style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginBottom: 8,
+                  border: "2px solid rgba(171,75,255,0.4)",
+              }}
+              />
               <p className="text-white" style={{ fontSize: 12, fontWeight: 700 }}>{t.name}</p>
               <p style={{ fontSize: 11, color: "#9B8EC4" }}>{t.handle}</p>
               <div

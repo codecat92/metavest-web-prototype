@@ -5,6 +5,7 @@ import { Search, SlidersHorizontal, TrendingUp, Users, Shield, Star } from "luci
 const traders = [
   {
     id: 1, name: "AlphaWave", handle: "@alphawave", avatar: "AW",
+    avatar_url: "https://picsum.photos/seed/alphawave/100/100",
     winRate: "78%", followers: "12.4K", roi: "+142%", risk: "Medium",
     monthlyReturn: "+24.3%", totalTrades: 847,
     bio: "Macro + momentum trader. EUR/USD & GBP/USD specialist.",
@@ -12,6 +13,7 @@ const traders = [
   },
   {
     id: 2, name: "TradeMind", handle: "@trademind", avatar: "TM",
+    avatar_url: "https://picsum.photos/seed/trademind/100/100",
     winRate: "71%", followers: "8.7K", roi: "+89%", risk: "Low",
     monthlyReturn: "+11.2%", totalTrades: 1240,
     bio: "Risk-managed systematic forex. Low drawdown focus.",
@@ -19,6 +21,7 @@ const traders = [
   },
   {
     id: 3, name: "FX Sentinel", handle: "@fxsentinel", avatar: "FS",
+    avatar_url: "https://picsum.photos/seed/fxsentinel/100/100",
     winRate: "83%", followers: "21.4K", roi: "+231%", risk: "High",
     monthlyReturn: "+38.7%", totalTrades: 523,
     bio: "Aggressive scalping on majors & gold. High risk, high reward.",
@@ -26,6 +29,7 @@ const traders = [
   },
   {
     id: 4, name: "PipMaster", handle: "@pipmaster", avatar: "PM",
+    avatar_url: "https://picsum.photos/seed/pipmaster/100/100",
     winRate: "65%", followers: "5.3K", roi: "+67%", risk: "Medium",
     monthlyReturn: "+9.4%", totalTrades: 1890,
     bio: "Multi-pair portfolio trader. Specializes in USD crosses.",
@@ -33,6 +37,7 @@ const traders = [
   },
   {
     id: 5, name: "ZenTrader", handle: "@zentrader", avatar: "ZT",
+    avatar_url: "https://picsum.photos/seed/zentrader/100/100",
     winRate: "69%", followers: "3.1K", roi: "+54%", risk: "Low",
     monthlyReturn: "+7.8%", totalTrades: 678,
     bio: "Swing trading only. Patient setups, clean entries on majors.",
@@ -146,12 +151,18 @@ export function TradersScreen({ onNavigate }: { onNavigate: (screen: string) => 
               {/* Top row */}
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: "linear-gradient(135deg, #AB4BFF 0%, #5913B8 100%)" }}
-                  >
-                    <span className="text-white" style={{ fontSize: 14, fontWeight: 800 }}>{trader.avatar}</span>
-                  </div>
+                <img
+                  src={trader.avatar_url}
+                  alt={trader.name}
+                  style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  flexShrink: 0,
+                  border: "2px solid rgba(171,75,255,0.4)",
+                }}
+              />
                   <div>
                     <div className="flex items-center gap-1.5">
                       <p className="text-white" style={{ fontSize: 15, fontWeight: 700 }}>{trader.name}</p>
